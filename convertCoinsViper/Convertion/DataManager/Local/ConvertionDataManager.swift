@@ -17,8 +17,8 @@ class ConvertionDataManager: ConvertionDataManagerInputProtocol {
         let value = UserDefaults.standard.value(forKey: key) as? [String: Int]
         
         guard let settingsValue = value else { return nil }
-        guard let baseId = settingsValue["base_id"] else { return nil }
-        guard let convertedId = settingsValue["converted_id"] else { return nil }
+        guard let baseId = settingsValue["base"]["id"] else { return nil }
+        guard let convertedId = settingsValue["converted"]["id"] else { return nil }
         
         let baseCoin = CoinEntity(value: 0, type: CoinEntity.Coin(id: baseId))
         let convertedCoin = CoinEntity(value: 0, type: CoinEntity.Coin(id: convertedId))

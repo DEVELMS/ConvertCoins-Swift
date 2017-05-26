@@ -13,6 +13,10 @@ class SettingsPresenter: SettingsPresenterProtocol {
     var wireFrame: SettingsWireFrameProtocol?
     
     func viewDidLoad() { }
+    
+    func saveCoins(baseCoinIndex: Int, convertedCoinIndex: Int) {
+        interactor?.saveCoins(baseCoinIndex: baseCoinIndex, convertedCoinIndex: convertedCoinIndex)
+    }
 }
 
 

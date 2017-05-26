@@ -21,13 +21,18 @@ class SettingsView: UITableViewController {
     
     // MARK: - Vars
     
-    //let coinTupleList = [(type: CoinModel.Coin.dollar, tag: 1), (type: CoinModel.Coin.euro, tag: 2), (type: CoinModel.Coin.real, tag: 3), (type: CoinModel.Coin.bitcoin, tag: 4)]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         presenter?.viewDidLoad()
         self.title = "Settings"
+    }
+    
+    func selectedCoinChanged() {
+    
+        let baseCoinIndex = baseCoinCheckList.index(of: <#T##UISwitch#>)
+        
+        presenter?.saveCoins(baseCoinIndex: <#T##Int#>, convertedCoinIndex: <#T##Int#>)
     }
     
     // MARK: - Actions

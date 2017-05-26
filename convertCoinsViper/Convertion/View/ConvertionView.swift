@@ -24,8 +24,11 @@ class ConvertionView: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter?.viewDidLoad()
         self.title = "Coins converter"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        presenter?.viewDidLoad()
     }
     
     

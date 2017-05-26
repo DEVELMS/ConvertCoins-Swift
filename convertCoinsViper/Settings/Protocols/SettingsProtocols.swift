@@ -28,6 +28,8 @@ protocol SettingsPresenterProtocol: class {
     
     // VIEW -> PRESENTER
     func viewDidLoad()
+    func saveBaseCoin(index: Int)
+    func saveConvertedCoin(index: Int)
 }
 
 protocol SettingsInteractorOutputProtocol: class {
@@ -42,7 +44,8 @@ protocol SettingsInteractorInputProtocol: class {
     var dataManager: SettingsDataManagerInputProtocol? { get set }
     
     // PRESENTER -> INTERACTOR
-    //example
+    func saveBaseCoin(index: Int)
+    func saveConvertedCoin(index: Int)
 }
 
 protocol SettingsDataManagerOutputProtocol: class {
@@ -52,5 +55,6 @@ protocol SettingsDataManagerOutputProtocol: class {
 protocol SettingsDataManagerInputProtocol: class {
     
     // INTERACTOR -> LOCALDATAMANAGER
-    func saveCoins(coins: (baseCoin: CoinEntity, convertedCoin: CoinEntity))
+    func saveBaseCoin(coin: CoinEntity)
+    func saveConvertedCoin(coin: CoinEntity)
 }
