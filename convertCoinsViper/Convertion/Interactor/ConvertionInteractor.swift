@@ -16,5 +16,4 @@ class ConvertionInteractor: ConvertionInteractorInputProtocol {
         guard let coins = dataManager?.retrieveCoins() else { return }
         presenter?.didRetrieveCoins(coins)
     }
-
 }

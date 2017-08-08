@@ -19,14 +19,6 @@ protocol ConvertionViewProtocol: class {
     //example
 }
 
-protocol ConvertionWireFrameProtocol: class {
-    
-    func present(at window: UIWindow?)
-    
-    // PRESENTER -> WIREFRAME
-    func presentSettingsScreen()
-}
-
 protocol ConvertionPresenterProtocol: class {
     
     var view: ConvertionViewProtocol? { get set }
@@ -36,6 +28,15 @@ protocol ConvertionPresenterProtocol: class {
     // VIEW -> PRESENTER
     func viewDidLoad()
     func presentSettings()
+    func convertValue()
+}
+
+protocol ConvertionWireFrameProtocol: class {
+    
+    func present(at window: UIWindow?)
+    
+    // PRESENTER -> WIREFRAME
+    func presentSettingsScreen()
 }
 
 protocol ConvertionInteractorOutputProtocol: class {

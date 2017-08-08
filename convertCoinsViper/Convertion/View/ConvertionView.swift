@@ -10,16 +10,16 @@ import UIKit
 
 class ConvertionView: UITableViewController {
     
+    // MARK: - Vars & Outlets
+    
     @IBOutlet weak var baseCoinTitle: UILabel!
     @IBOutlet weak var convertedCoinTitle: UILabel!
     @IBOutlet weak var convertedCoinValue: UILabel!
     
-    // MARK: - Vars
-    
     var presenter: ConvertionPresenterProtocol?
     
     
-    // MARK: - Internal methods
+    // MARK: - View controller
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,10 +43,9 @@ class ConvertionView: UITableViewController {
     }
 }
 
-extension ConvertionView: ConvertionViewProtocol {
+// MARK: - ConvertionView Protocol
 
-    
-    // MARK: - ConvertionView Protocol
+extension ConvertionView: ConvertionViewProtocol {
     
     func showConvertedValue(value: String) {
         convertedCoinValue.text = value
@@ -55,17 +54,6 @@ extension ConvertionView: ConvertionViewProtocol {
     func changeDisplayedCoins(coinBase: String, coinToConvert: String) {
         baseCoinTitle.text = coinBase
         convertedCoinTitle.text = coinToConvert
-    }
-    
-}
-
-extension ConvertionView {
-
-    
-    // MARK: - Table view data source
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
     }
     
 }

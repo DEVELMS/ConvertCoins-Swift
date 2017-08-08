@@ -14,7 +14,12 @@ class SettingsDataManager: SettingsDataManagerInputProtocol {
     
     func saveBaseCoin(coin: CoinEntity) {
     
-    
+        let parameters = [
+            "base": ["id" : 1] ,
+            "converted": ["id" : 2]
+        ]
+        
+        UserDefaults.standard.setValue(parameters, forKey: key)
     }
     
     func saveConvertedCoin(coin: CoinEntity) {

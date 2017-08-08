@@ -30,7 +30,7 @@ class SettingsView: UITableViewController {
     
     func selectedCoinChanged() {
     
-        let baseCoinIndex = baseCoinCheckList.index(of: <#T##UISwitch#>)
+        let baseCoinIndex = baseCoinCheckList.index(of: )
         
         presenter?.saveCoins(baseCoinIndex: <#T##Int#>, convertedCoinIndex: <#T##Int#>)
     }

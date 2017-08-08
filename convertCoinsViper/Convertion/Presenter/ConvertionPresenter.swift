@@ -12,12 +12,19 @@ class ConvertionPresenter: ConvertionPresenterProtocol {
     var interactor: ConvertionInteractorInputProtocol?
     var wireFrame: ConvertionWireFrameProtocol?
     
+    var baseCoin = CoinEntity(value: 0)
+    var convertedCoin = CoinEntity(value: 0, type: .bitcoin)
+    
     func viewDidLoad() {
         interactor?.retrieveCoins()
     }
     
     func presentSettings() {
         wireFrame?.presentSettingsScreen()
+    }
+    
+    func convertValue() {
+        
     }
 }
 
